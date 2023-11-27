@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import BookList from './BookList/BookList';
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
         <p>
           BookShop Demo 2
         </p>
+        <BookList></BookList>
       </header>
     </div>
   );
