@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from "axios";
+import BookCard from './BookCard/BookCard';
 
 
 const BookList = () => {
@@ -11,17 +11,18 @@ const BookList = () => {
         //   });
         setBookList([
             {
-                "name":"Test"
+                "name": "Test"
             }
         ]);
     });
 
     return (
         <>
-            <For each="book" of={bookList}>
-                <BookCard book={book} />
-            </For>
-
+            {
+                bookList.forEach((book) => {
+                    <BookCard book={book} />
+                })
+            }
         </>
     )
 }
