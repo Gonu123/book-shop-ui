@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          BookShop Demo 1
+          BookShop Demo 2
         </p>
       </header>
     </div>
