@@ -1,24 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Text } from 'react-native';
-import {
-  Card,
-} from './BookCard.style';
 
-
-const BookCard = ({ book }) => {
-
-
+function BookCard(book) {
   return (
-    <Card testID="book-card" >
-      <Text>{book.name}</Text>
-    </Card>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
   );
-};
-
-BookCard.propTypes = {
-  book: PropTypes.shape({
-  }).isRequired,
-};
+}
 
 export default BookCard;

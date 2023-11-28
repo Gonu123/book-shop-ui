@@ -1,33 +1,13 @@
-import React, { useEffect, useState } from 'react';
 import BookCard from './BookCard/BookCard';
 
-
-const BookList = () => {
-    const [bookList, setBookList] = useState([]);
-
-    useEffect(() => {
-        // axios.get("baseURL").then((response) => {
-        //     setPost(response.data);
-        //   });
-        setBookList([
-            {
-                "name": "Test"
-            }
-        ]);
-    });
+function BookList(book) {
+    const bookList = [{
+        "name": "Test"
+    }];
 
     return (
-        <>
-            {
-                bookList.forEach((book) => {
-                    <BookCard book={book} />
-                })
-            }
-        </>
-    )
-}
-
-
-
+        <BookCard book={bookList[0]} />
+    );
+  }
 
 export default BookList;
