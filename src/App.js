@@ -1,8 +1,8 @@
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
 import BookList from './BookList/BookList';
 import Header from './Header/Header';
+import SignUP from './SignUP/SignUP';
 
 function App() {
   return (
@@ -10,6 +10,8 @@ function App() {
       <header className="App-header">
         <Header />
         <BookList />
+        {/* <BookList /> */}
+        <SignUP/>
       </header>
     </div>
   );
