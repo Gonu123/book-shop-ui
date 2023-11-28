@@ -1,16 +1,14 @@
 import './App.css';
 import BookList from './BookList/BookList';
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+import SignUP from './SignUP/SignUP';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          BookShop Demo 2
-        </p>
-        <BookList />
+        {/* <BookList /> */}
+        <SignUP/>
       </header>
     </div>
   );
