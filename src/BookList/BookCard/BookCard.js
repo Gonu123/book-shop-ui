@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Text } from 'react-native';
 import {
-  BookCard,
+  Card,
 } from './BookCard.style';
 
 
 const BookCard = ({ book }) => {
-  
+
 
   return (
-    <BookCard testID="book-card" >
+    <Card testID="book-card" >
       <Text>{book.name}</Text>
-    </BookCard>
+    </Card>
   );
 };
 

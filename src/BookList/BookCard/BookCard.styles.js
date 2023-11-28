@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { TouchableOpacity } from 'react-native';
 
-export const BookCard = styled(TouchableOpacity)`
+export const Card = styled(TouchableOpacity)`
   margin-top: 15px;
   margin-horizontal: 15px;
   padding: 15px;
