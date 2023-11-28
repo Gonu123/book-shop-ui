@@ -1,33 +1,25 @@
 import BookCard from './BookCard/BookCard';
 import "./BookList.styles.css";
+import axios from "axios";
+import { useEffect, useState } from 'react';
 
 function BookList() {
-    const bookList = [
-        {
-            "name": "Test 1",
-            "desc": "This is the description of test 1"
-        },
-        {
-            "name": "Test 2",
-            "desc": "This is the description of test 2"
-        },
-        {
-            "name": "Test 3",
-            "desc": "This is the description of test 3"
-        },
-        {
-            "name": "Test 4",
-            "desc": "This is the description of test 4"
-        },
-        {
-            "name": "Test 5",
-            "desc": "This is the description of test 5"
-        }
+    const [bookList,setBookList] = useState([]);
 
-    ];
+    useEffect(()=>{
+        axios
+            .get("http://localhost:8080/books")
+            .then((response) => {
+                setBookList(response?.data?.books)
+            })
+            .catch((error) => {
+                console.log(error)
+            });
 
+    },[]);
+    
     return (
-        <div class="bookCardParent">
+        <div class="d-flex flex-wrap justify-content-evenly">
             {bookList.map(book => (
                 <div class="bookCard">
                     <BookCard book={book} />
