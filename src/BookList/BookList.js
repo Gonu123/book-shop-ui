@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 function BookList() {
     const [bookList,setBookList] = useState([]);
+    const [cartList, setCartList] = useState({});
 
     useEffect(()=>{
         axios
@@ -20,11 +21,16 @@ function BookList() {
     
     return (
         <div class="d-flex flex-wrap justify-content-evenly">
-            {bookList.map(book => (
-                <div class="bookCard">
-                    <BookCard book={book} />
-                </div>
-            ))}
+            {
+                bookList.length>0 ?
+                    bookList.map(book => (
+                        <div class="bookCard">
+                            <BookCard book={book} cartList={cartList} setCartList={setCartList} />
+                        </div>
+                    ))
+                :
+                    <p class="mt-2">No Books Available, Please try again after some time.</p>
+            }
         </div>
     );
 }

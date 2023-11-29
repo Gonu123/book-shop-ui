@@ -21,24 +21,20 @@
     height: 38px;
 }
 
-.leftColumn{
-
-}
-
-.rightColumn{
-
-}
-
 .inputNumber{
     margin-left: 1px;
     margin-right: 1px;
+    width: 120px;
+    border-radius: 5px;
+    border-width: 1px;
+    text-align: center;
 }
 
-.plus{
-    width: 40px;
+#plus{
+    width: 20px;
 }
 
-.minus{
+#minus{
     width: 40px;
 }
 
