@@ -8,9 +8,13 @@ const BookCard = ({ book, cartList, setCartList }) => {
     let newCartList = {
       ...cartList,
     }
-    newCartList[book.isbn] = currentValue + 1
+    newCartList[book.isbn] = {
+      "count":currentValue + 1,
+      "price": book.price,
+    }
     setCartList(newCartList);
     document.getElementById(`inputNumber_` + book.isbn).value = currentValue + 1;
+    console.log("Add",newCartList)
   }
 
   const onMinusClick = () => {
@@ -19,7 +23,10 @@ const BookCard = ({ book, cartList, setCartList }) => {
       ...cartList,
     }
     if (currentValue > 1) {
-      newCartList[book.isbn] = currentValue - 1
+      newCartList[book.isbn] = {
+        "count":currentValue - 1,
+        "price": book.price,
+      }
       setCartList(newCartList);
       document.getElementById(`inputNumber_` + book.isbn).value = currentValue - 1;
     }
@@ -28,6 +35,7 @@ const BookCard = ({ book, cartList, setCartList }) => {
       setCartList(newCartList);
       document.getElementById(`inputNumber_` + book.isbn).value = 0;
     }
+    console.log("Minus",newCartList)
   }
 
   return (
