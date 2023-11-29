@@ -36,7 +36,6 @@ const BookCard = ({ book, cartList, setCartList }) => {
 
         <div class="d-flex flex-column justify-content-evenly d-grid gap-1 leftColumn">
           <img class="card-img" src={book.imageUrlM} alt="" />
-          <Button href="#" class="btn btn-primary buyNow" disabled={book.booksAvailable > 0}>Buy Now</Button>
           <div class="d-flex flex-row addToCart">
             <Button onClick={onMinusClick} class="btn btn-primary" disabled={book.booksAvailable > 0} id="minus">
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-minus" viewBox="4 1 16 16">
