@@ -1,5 +1,46 @@
 import React from "react";
 import "../SignUP/style.css";
+import { Navigate } from "react-router";
+import axios from "axios";
+
+const SignUp = () => {
+  const [password, setpassword] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [email, SetEmail] = useState("");
+  const [name, setName] = useState("");
+
+  const SignUPUrl = "http://localhost:8080/idp/create-user";
+  const passwordRegex =
+    /^(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\-])(?=.*\d)(?=.*[A-Z]).{8,16}$/;
+  const Emailpattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
+  async function OnSubmit(async) {
+    const params = JSON.stringify({
+      username: email,
+      name: name,
+      phNo: mobileNumber,
+    });
+
+    if (!mobileNumber.length == 10) {
+      alert("Phone Number Validation failed");
+    } else if (!Emailpattern.test(email)) {
+      alert("Email validation failed");
+    } else {
+      axios
+        .post(SignUPUrl, params, {
+          headers: {
+            "content-type": "application/json",
+          },
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => {
+         alert("Username Already Taken")
+        });
+      return <Navigate to="/" replace={true} />;
+    }
+  }
 
 const SignUP = () => {
   return (
@@ -69,6 +110,95 @@ const SignUP = () => {
                         </div>
                       </form>
                     </div>
+
+                    <form id="registrationForm">
+                      <div class="mb-3">
+                        <label for="name" class="form-label">
+                          Name:
+                        </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          name="name"
+                          required
+                          onChange={(event) => {
+                            setName(event.target.value);
+                          }}
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="mobile" class="form-label">
+                          Mobile Number:
+                        </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="mobile"
+                          name="mobile"
+                          pattern="[0-9]{10}"
+                          required
+                          onChange={(event) => {
+                            setMobileNumber(event.target.value);
+                          }}
+                        />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="email" class="form-label">
+                          Email/Username
+                        </label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          name="email"
+                          required
+                          onChange={(event) => {
+                            SetEmail(event.target.value);
+                          }}
+                        />
+                      </div>
+
+                      {/* <div class="mb-3">
+                        <label for="password" class="form-label">
+                          Password:
+                        </label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          name="password"
+                          required
+                          onChange={(event) => {
+                            setpassword(event.target.value);
+                          }}
+                        />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">
+                          Confirm Password:
+                        </label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="confirmPassword"
+                          name="confirmPassword"
+                          required
+                          onChange={(event) => {
+                            setConfirmPassword(event.target.value);
+                          }}
+                        />
+                      </div> */}
+                      <button
+                        type="button"
+                        class="btn btn-success"
+                        onClick={OnSubmit}
+                      >
+                        Register
+                      </button>
+                    </form>
                   </div>
                   <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                     <div class="text-white px-3 py-4 p-md-5 mx-md-4">
@@ -92,4 +222,4 @@ const SignUP = () => {
   );
 };
 
-export default SignUP;
+export default SignUp;
