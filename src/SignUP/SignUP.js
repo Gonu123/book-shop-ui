@@ -61,103 +61,56 @@ const SignUp = () => {
                         </h4>
                       </div>
 
-                      <form>
-                        <p>Please login to your account</p>
+                      <form id="registrationForm">
+                        <div class="mb-3">
+                          <label for="name" class="form-label">
+                            Name:
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            name="name"
+                            required
+                            onChange={(event) => {
+                              setName(event.target.value);
+                            }}
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="mobile" class="form-label">
+                            Mobile Number:
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="mobile"
+                            name="mobile"
+                            pattern="[0-9]{10}"
+                            required
+                            onChange={(event) => {
+                              setMobileNumber(event.target.value);
+                            }}
+                          />
+                        </div>
 
-                        <div class="form-outline mb-4">
+                        <div class="mb-3">
+                          <label for="email" class="form-label">
+                            Email/Username
+                          </label>
                           <input
                             type="email"
                             class="form-control"
-                            id="exampleInputEmail1"
-                            aria-describedby="emailHelp"
+                            id="email"
+                            name="email"
+                            required
+                            onChange={(event) => {
+                              SetEmail(event.target.value);
+                            }}
                           />
-                          <label class="form-label" for="form2Example11">
-                            Username
-                          </label>
                         </div>
 
-                        <div class="form-outline mb-4">
-                          <input
-                            type="password"
-                            id="form2Example22"
-                            class="form-control"
-                          />
-                          <label class="form-label" for="form2Example22">
-                            Password
-                          </label>
-                        </div>
-
-                        <div class="text-center pt-1 mb-5 pb-1">
-                          <button
-                            class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                            type="submit"
-                          >
-                            Log in
-                          </button>
-                          {/* <a class="text-muted" href="#!">
-                            Forgot password?
-                          </a> */}
-                        </div>
-
-                        <div class="d-flex align-items-center justify-content-center pb-4">
-                          <p class="mb-0 me-2">Don't have an account?</p>
-                          <button type="button" class="btn btn-outline-danger">
-                            Create new
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-
-                    <form id="registrationForm">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">
-                          Name:
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="name"
-                          name="name"
-                          required
-                          onChange={(event) => {
-                            setName(event.target.value);
-                          }}
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label for="mobile" class="form-label">
-                          Mobile Number:
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="mobile"
-                          name="mobile"
-                          pattern="[0-9]{10}"
-                          required
-                          onChange={(event) => {
-                            setMobileNumber(event.target.value);
-                          }}
-                        />
-                      </div>
-
-                      <div class="mb-3">
-                        <label for="email" class="form-label">
-                          Email/Username
-                        </label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="email"
-                          name="email"
-                          required
-                          onChange={(event) => {
-                            SetEmail(event.target.value);
-                          }}
-                        />
-                      </div>
-
-                      {/* <div class="mb-3">
+                        {/* <div class="mb-3">
                         <label for="password" class="form-label">
                           Password:
                         </label>
@@ -188,14 +141,15 @@ const SignUp = () => {
                           }}
                         />
                       </div> */}
-                      <button
-                        type="button"
-                        class="btn btn-success"
-                        onClick={OnSubmit}
-                      >
-                        Register
-                      </button>
-                    </form>
+                        <button
+                          type="button"
+                          class="btn btn-success"
+                          onClick={OnSubmit}
+                        >
+                          Register
+                        </button>
+                      </form>
+                    </div>
                   </div>
                   <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                     <div class="text-white px-3 py-4 p-md-5 mx-md-4">
