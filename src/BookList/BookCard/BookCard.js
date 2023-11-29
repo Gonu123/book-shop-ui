@@ -31,7 +31,7 @@ const BookCard = ({ book, cartList, setCartList }) => {
   }
 
   return (
-    <div class="card">
+    <div class="card" style={book.booksAvailable > 0 ? {backgroundColor:"lightgrey"} : {backgroundColor:"white"}}>
       <div class="card-body d-flex flex-row d-grid gap-5">
 
         <div class="d-flex flex-column justify-content-evenly d-grid gap-1 leftColumn">
