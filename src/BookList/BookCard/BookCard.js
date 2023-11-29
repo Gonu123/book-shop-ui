@@ -38,7 +38,7 @@ function BookCard({ book, cartList, setCartList }) {
     <div class="card">
       <div class="card-body d-flex flex-row d-grid gap-5">
         <div class="d-flex flex-column justify-content-evenly d-grid gap-1 leftColumn">
-          <img class="card-img" src={book.imageUrlM} alt="Card image cap" />
+          <img class="card-img" src={book.imageUrlM} alt="" />
           <Button href="#" class="btn btn-primary buyNow" disabled={book.booksAvailable>0}>Buy Now</Button>
           <div class="d-flex flex-row addToCart">
             <Button onClick={onMinusClick} class="btn btn-primary" disabled={book.booksAvailable>0} id="minus">
