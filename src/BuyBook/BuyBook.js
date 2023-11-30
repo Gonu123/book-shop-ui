@@ -1,26 +1,12 @@
 import "./BuyBook.styles.css";
 import { Button } from "react-bootstrap";
+import { useLocation } from "react-router-dom"
 
 
 const BuyBook = () => {
+    const location = useLocation();
+    const cartList = location.state?.cartList
 
-    const cartList = {
-        "0195153448": {
-            "name": "Classical Mythology",
-            "price": 256.22242641102025,
-            "count": 2,
-        },
-        "0195153449": {
-            "name": "Test 2",
-            "price": 356.22242641102025,
-            "count": 3,
-        },
-        "0195153450": {
-            "name": "Test 3",
-            "price": 100.22242641102025,
-            "count": 1,
-        },
-    }
     let totalPrice = 0;
 
     const calculateTotalPrice = () => {

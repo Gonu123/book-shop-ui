@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SignUP from "./SignUP/SignUP";
 import BookList from "./BookList/BookList";
+import BuyBook from "./BuyBook/BuyBook"
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/SignUP" element={<SignUP />} />
         <Route path="/" element={<BookList />} />
+        <Route path="/BuyBook" element={<BuyBook />} />
       </Routes>
     </div>
   );
