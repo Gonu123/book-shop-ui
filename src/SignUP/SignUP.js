@@ -41,7 +41,7 @@ const SignUp = () => {
           console.log(err.response.data.errCode);
           if (
             err.response.data.errCode != null &&
-            err.response.data.errCode == "USERNAME_ALREADY_TAKEN"
+            err.response.data.errCode === "USERNAME_ALREADY_TAKEN"
           )
             alert(err.response.data.message);
           else alert("Please check the input fields");

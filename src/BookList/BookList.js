@@ -2,8 +2,6 @@ import BookCard from "./BookCard/BookCard";
 import "./BookList.styles.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import Header from "../Header/Header";
 const BookList = () => {
   const [bookList, setBookList] = useState([]);
