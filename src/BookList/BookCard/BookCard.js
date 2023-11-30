@@ -15,7 +15,6 @@ const BookCard = ({ book, cartList, setCartList }) => {
     }
     setCartList(newCartList);
     document.getElementById(`inputNumber_` + book.isbn).value = currentValue + 1;
-    console.log("Add",newCartList)
   }
 
   const onMinusClick = () => {
@@ -37,7 +36,6 @@ const BookCard = ({ book, cartList, setCartList }) => {
       setCartList(newCartList);
       document.getElementById(`inputNumber_` + book.isbn).value = 0;
     }
-    console.log("Minus",newCartList)
   }
 
   return (

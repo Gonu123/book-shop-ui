@@ -2,15 +2,11 @@ import BookCard from './BookCard/BookCard';
 import "./BookList.styles.css";
 import axios from "axios";
 import { useEffect, useState } from 'react';
-import { Button } from "react-bootstrap";
+import Header from "../Header/Header.js";
 
 const BookList = () => {
     const [bookList, setBookList] = useState([]);
     const [cartList, setCartList] = useState({});
-
-    const onCheckOutClick = () => {
-        console.log("Check Out")
-    }
 
     useEffect(() => {
         axios
@@ -26,13 +22,11 @@ const BookList = () => {
 
     return (
         <>
+            <Header isBookAvailable={bookList.length>0} cartList={cartList}/>
             {
+                
                 bookList.length > 0 ?
-                    <>
-                        <div class="d-flex justify-content-between">
-                            <p class="h1" id="header">Book Shop</p>
-                            <Button onClick={onCheckOutClick} class="btn btn-primary" id="checkOut">Check Out</Button>
-                        </div>
+                    <div>
                         <div class="d-flex flex-wrap justify-content-evenly">
                             {
                                 bookList.map(book => (
@@ -42,11 +36,9 @@ const BookList = () => {
                                 ))
                             }
                         </div>
-                    </>
-
-
-                    :
-                    <p class="mt-2">No Books Available, Please try again after some time.</p>
+                    </div>
+                    : <></>
+                    
             }
         </>
 
