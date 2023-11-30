@@ -20,9 +20,9 @@ const BookList = () => {
 
   return (
     <>
+      <Header isBookAvailable={bookList.length > 0} cartList={cartList} />
       {bookList.length > 0 ? (
         <>
-          <Header isBookAvailable={bookList.length > 0} cartList={cartList} />
           {bookList.length > 0 ? (
             <div>
               <div class="d-flex flex-wrap justify-content-evenly">
@@ -41,11 +41,8 @@ const BookList = () => {
             <></>
           )}
         </>
-      ) : (
-        <p class="mt-2">
-          No Books Available, Please try again after some time.
-        </p>
-      )}
+      ) : <></>
+      }
     </>
   );
 }
