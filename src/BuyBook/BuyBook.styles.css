@@ -1,0 +1,28 @@
+#cartList{
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+#title{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#totalPrice{
+    margin-top: 10px;
+    margin-right: 10%;
+    text-align: right;
+}
+
+#address{
+    margin-top: 1%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+#buyNow{
+    margin-top: 10px;
+    margin-right: 10%;
+    float: right;
+}
