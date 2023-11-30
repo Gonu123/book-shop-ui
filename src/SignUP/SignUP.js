@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "../SignUP/style.css";
-import { Navigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SignUp = () => {
   const [mobileNumber, setMobileNumber] = useState("");
   const [email, SetEmail] = useState("");
+  const navigate = useNavigate();
   const [name, setName] = useState("");
 
   const SignUPUrl = "http://localhost:8080/idp/create-user";
@@ -13,6 +14,7 @@ const SignUp = () => {
   const Emailpattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
   async function OnSubmit(async) {
+  
     const params = JSON.stringify({
       username: email,
       name: name,
@@ -32,11 +34,12 @@ const SignUp = () => {
         })
         .then((response) => {
           console.log(response);
+          alert("User Registered SUccessfully");
+            navigate("/");
         })
         .catch((err) => {
           alert("Username Already Taken");
         });
-      return <Navigate to="/" replace={true} />;
     }
   }
 
