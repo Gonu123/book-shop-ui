@@ -13,6 +13,7 @@ const BuyBook = () => {
         Object.keys(cartList).forEach((isbn) => (
             totalPrice += parseFloat(cartList[isbn].count) * parseFloat(cartList[isbn].price)
         ))
+        totalPrice = totalPrice.toFixed(2);
     }
 
     const onBuyNowClick = () => {
