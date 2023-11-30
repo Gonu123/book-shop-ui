@@ -16,7 +16,12 @@ const BuyBook = () => {
     }
 
     const onBuyNowClick = () => {
-        console.log("Clicked Buy Now")
+        if(document.getElementById("address").value===""){
+            alert("Please add address to continue purchase")
+        }
+        else{
+            console.log("Clicked Buy Now")
+        }
       }
 
     return (
