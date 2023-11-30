@@ -16,7 +16,7 @@ const BookList = () => {
       .catch((error) => {
         console.log(error);
       });
-  });
+  },[]);
 
   return (
     <>

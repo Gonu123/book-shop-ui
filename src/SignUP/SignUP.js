@@ -9,7 +9,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
 
-  const SignUPUrl = "http://localhost:8080/idp/create-user";
+  const SignUPUrl = "http://localhost:8080/idp/user";
 
   const Emailpattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
