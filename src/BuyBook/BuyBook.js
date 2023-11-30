@@ -42,9 +42,9 @@ const BuyBook = () => {
                             }
                         </div>
                         <h3 id="totalPrice">Total Price  =  ₹ {totalPrice}</h3>
-                        <div class="mb-3" id="address">
+                        <div class="mb-3" id="addressBox">
                             <h5>Address</h5>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control" rows="3" id="address"></textarea>
                         </div>
                         <Button onClick={onBuyNowClick} class="btn btn-primary" id="buyNow">Buy Now</Button>
                     </>
