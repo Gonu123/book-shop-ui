@@ -11,6 +11,7 @@ const BookCard = ({ book, cartList, setCartList }) => {
     newCartList[book.isbn] = {
       "count":currentValue + 1,
       "price": book.price,
+      "name":book.name,
     }
     setCartList(newCartList);
     document.getElementById(`inputNumber_` + book.isbn).value = currentValue + 1;
@@ -26,6 +27,7 @@ const BookCard = ({ book, cartList, setCartList }) => {
       newCartList[book.isbn] = {
         "count":currentValue - 1,
         "price": book.price,
+        "name":book.name,
       }
       setCartList(newCartList);
       document.getElementById(`inputNumber_` + book.isbn).value = currentValue - 1;
