@@ -6,8 +6,17 @@ const Header = ({ isBookAvailable, cartList }) => {
   const navigate = useNavigate();
 
   const onCheckOutClick = () => {
-    navigate("/BuyBook", { state: { cartList } }) 
+    navigate("/BuyBook", { state: { cartList } })
   }
+
+  const onLoginClick = () => {
+    navigate("/Login")
+  }
+
+  const onSignUpClick = () => {
+    navigate("/SignUP")
+  }
+
 
   return (
     <>
@@ -16,17 +25,13 @@ const Header = ({ isBookAvailable, cartList }) => {
           <p class="h1" id="header">
             Book Shop
           </p>
-          <Link to="Login">
-            <Button class="btn  btn-secondary" id="checkOut">
-              Login
-            </Button>
-          </Link>
-          <Link to="SignUp">
-            <Button class="btn  btn-secondary" id="checkOut">
-              SignUp
-            </Button>
-          </Link>
-          <Button class="btn  btn-primary" id="checkOut" onClick={onCheckOutClick} disabled={Object.keys(cartList).length===0}>
+          <Button class="btn btn-primary" id="login" onClick={onLoginClick}>
+            Log in
+          </Button>
+          <Button class="btn btn-primary" id="signup" onClick={onSignUpClick}>
+            Sign Up
+          </Button>
+          <Button class="btn btn-primary" id="checkOut" onClick={onCheckOutClick} disabled={Object.keys(cartList).length === 0}>
             Check Out
           </Button>
 

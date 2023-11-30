@@ -6,3 +6,19 @@
 #noBookText{
     text-align: center;
 }
+
+#checkOut {
+    margin-right: 2%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#login {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#signup {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
