@@ -13,7 +13,7 @@ const Header = ({ isBookAvailable, cartList }) => {
         isBookAvailable ?
           <div class="d-flex justify-content-between ml-10" >
             <p class="h1" id="header">Book Shop</p>
-            <Button onClick={onCheckOutClick} class="btn btn-primary" id="checkOut">Check Out</Button>
+            <Button onClick={onCheckOutClick} class="btn btn-primary" id="checkOut" disabled={Object.keys(cartList).length===0}>Check Out</Button>
           </div >
           :
           <div class="d-flex flex-column justify-content-center">
