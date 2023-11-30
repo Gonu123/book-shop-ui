@@ -16,33 +16,29 @@ const BookList = () => {
       .catch((error) => {
         console.log(error);
       });
-  },[]);
+  }, []);
 
   return (
     <>
       <Header isBookAvailable={bookList.length > 0} cartList={cartList} />
-      {bookList.length > 0 ? (
-        <>
-          {bookList.length > 0 ? (
-            <div>
-              <div class="d-flex flex-wrap justify-content-evenly">
-                {bookList.map((book) => (
-                  <div class="bookCard">
-                    <BookCard
-                      book={book}
-                      cartList={cartList}
-                      setCartList={setCartList}
-                    />
-                  </div>
-                ))}
-              </div>
+      {
+        bookList.length > 0 ? (
+          <div>
+            <div class="d-flex flex-wrap justify-content-evenly">
+              {bookList.map((book) => (
+                <div class="bookCard">
+                  <BookCard
+                    book={book}
+                    cartList={cartList}
+                    setCartList={setCartList}
+                  />
+                </div>
+              ))}
             </div>
-          ) : (
-            <></>
-          )}
-        </>
-      ) : <></>
-      }
+          </div>
+        ) : (
+          <></>
+        )}
     </>
   );
 }
