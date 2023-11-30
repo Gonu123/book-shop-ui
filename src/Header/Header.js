@@ -1,6 +1,6 @@
 import "./Header.styles.css";
 import { Button } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Header = ({ isBookAvailable, cartList }) => {
 
   const navigate = useNavigate();
