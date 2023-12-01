@@ -14,7 +14,7 @@ const ViewOrder = () => {
 
         axios.get("http://localhost:8080/orders", {
             headers: {
-                'accessToken': access_token
+                'accessToken': "access_token"
             }
         }).then((response) => {
             setOrders(response?.data?.orders);
