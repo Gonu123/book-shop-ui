@@ -11,7 +11,7 @@ const Header = ({ isBookAvailable, cartList }) => {
   const navigate = useNavigate();
 
   const onCheckOutClick = () => {
-    navigate("/BuyBook", { state: { cartList ,accessToken} })
+    navigate("/BuyBook", { state: { cartList, accessToken } })
   }
   useEffect(() => {
     const url = new URL(window.location.href);
@@ -79,6 +79,10 @@ const Header = ({ isBookAvailable, cartList }) => {
     navigate("/SignUP")
   }
 
+  const onViewOrderClick = () => {
+    navigate("/ViewOrder")
+  }
+
 
   return (
     <>
@@ -96,6 +100,9 @@ const Header = ({ isBookAvailable, cartList }) => {
           )}
           <Button class="btn btn-primary" id="signup" onClick={onSignUpClick}>
             Sign Up
+          </Button>
+          <Button class="btn btn-primary" id="login" onClick={onViewOrderClick}>
+            View Order
           </Button>
           <Button
             class="btn btn-primary"

@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import SignUP from "./SignUP/SignUP";
 import BookList from "./BookList/BookList";
 import BuyBook from "./BuyBook/BuyBook"
+import ViewOrder from "./ViewOrder/ViewOrder";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/SignUP" element={<SignUP />} />
         <Route path="/" element={<BookList />} />
         <Route path="/BuyBook" element={<BuyBook />} />
+        <Route path="/ViewOrder" element={<ViewOrder />} />
       </Routes>
     </div>
   );
