@@ -1,8 +1,7 @@
 import "./BuyBook.styles.css";
 import { Button } from "react-bootstrap";
-import { useLocation } from "react-router-dom"
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 const BuyBook = () => {
@@ -54,7 +53,6 @@ const BuyBook = () => {
               .catch((error) => {
                 console.log(error);
                 alert(`We are getting the error.\n Please Try after sometime.`);
-                navigate("/");
               });
         }
       }

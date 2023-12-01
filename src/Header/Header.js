@@ -80,7 +80,7 @@ const Header = ({ isBookAvailable, cartList }) => {
   }
 
   const onViewOrderClick = () => {
-    navigate("/ViewOrder")
+    navigate("/ViewOrder", { state: { accessToken }})
   }
 
 

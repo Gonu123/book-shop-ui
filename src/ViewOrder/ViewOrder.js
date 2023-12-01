@@ -1,15 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./ViewOrder.styles.css";
+import { useLocation } from "react-router-dom";
+
 
 const ViewOrder = () => {
     const [orders, setOrders] = useState([]);
+    const location = useLocation();
+    const access_token = location.state?.accessToken;
+    console.log(access_token);
 
     useEffect(() => {
 
         axios.get("http://localhost:8080/orders", {
             headers: {
-                'accessToken': 'eyJraWQiOiJkZWZhdWx0IiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImF1ZCI6ImRlZmF1bHQiLCJuYmYiOjE3MDE0MTIxNTEsImF6cCI6ImJvb2tzaG9wIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDkwL2RlZmF1bHQiLCJleHAiOjE3MDE0MTU3NTEsImlhdCI6MTcwMTQxMjE1MSwibm9uY2UiOiI1Njc4IiwianRpIjoiN2NjZWY4MzUtMjQ0NC00NDgyLTg1ZGMtMjA0MzgyY2RlMTFjIiwidGlkIjoiZGVmYXVsdCJ9.HFbPD4McK4Mt1oYVaovDRFfVgFOrTY-niXcwFIehQ5-hMMMWogP6fjdu0j_Cv71BB9BjqDZ3qNV5cgQs719a8OK4FcXTZEMwREEEBC718i994wiyB7-Pu9zwG1qNgoa0I3FLF6i48343jW-RfCAlZzdhFeO6-SwM7AQeCQinMOIlYJWdv2XYy2xT_VZX7SN8Ajy9LovoAUqSpR1G0rl4CtoQ5bPCjky1s-rOt1dUtdf174BVpZb02YHaNBgY4_i_hAEGtRmkKYoX9MLcI2pB6-KFt5KIa2-o3nbCdoys1-qPkm6V2VMuuwYJOCwC1fuuylRjyk7Opl46_uc3P61bZA'
+                'accessToken': access_token
             }
         }).then((response) => {
             setOrders(response?.data?.orders);
