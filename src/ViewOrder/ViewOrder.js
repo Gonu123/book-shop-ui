@@ -39,7 +39,7 @@ const ViewOrder = () => {
                                 <p class="card-text">Address: {order.address}</p>
                                 <p class="card-text">Mode Of Payment: {order.modeOfPayment}</p>
                                 <p class="card-text">Order Date: {order.orderDate}</p>
-                                <p class="card-text">Total Price: ₹{order.totalPrice ? order.totalPrice !== null : 0}</p>
+                                <p class="card-text">Total Price: ₹{order.totalPrice !== null ? order.totalPrice : 0}</p>
                             </div>
                             {
                                 order.items.map((item) => (
@@ -56,7 +56,7 @@ const ViewOrder = () => {
                                                         <h5 class="card-title">Name: {item.name}</h5>
                                                         <p class="card-text">Author: {item.subText}</p>
                                                         <p class="card-text">Quantity: {item.quantity}</p>
-                                                        <p class="card-text">Price: ₹{item.price ? item.price !== null : 0}</p>
+                                                        <p class="card-text">Price: ₹{item.price!==null ? item.price : 0}</p>
                                                     </div>
                                                 </div>
                                             </div>

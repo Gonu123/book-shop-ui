@@ -52,7 +52,7 @@ const BuyBook = () => {
               })
               .catch((error) => {
                 console.log(error);
-                alert(`We are getting the error.\n Please Try after sometime.`);
+                alert(`We are getting the error.\nPlease Try after sometime.`);
               });
         }
       }
