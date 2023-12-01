@@ -73,9 +73,9 @@ const Header = ({ isBookAvailable, cartList }) => {
   //   navigate("http://localhost:8090/default/authorize?client_id=debugger&scope=openid+role&response_type=code&response_mode=query&state=1234&nonce=5678&redirect_uri=http%3A%2F%2Flocalhost%3A3000");
   // }
 
-  // const onSignUpClick = () => {
-  //   navigate("/SignUP")
-  // }
+  const onSignUpClick = () => {
+    navigate("/SignUP")
+  }
 
 
   return (
@@ -87,18 +87,16 @@ const Header = ({ isBookAvailable, cartList }) => {
           </p>
           {loginVisible ? (
             <Link to="http://localhost:8090/default/authorize?client_id=debugger&scope=openid+role&response_type=code&response_mode=query&state=1234&nonce=5678&redirect_uri=http%3A%2F%2Flocalhost%3A3000">
-              <Button class="btn  btn-secondary" id="checkOut">
+              <Button class="btn btn-primary" id="login">
                 Login
               </Button>
             </Link>
           ) : (
             <h2>{userName}</h2>
           )}
-          <Link to="SignUp">
-            <Button class="btn  btn-secondary" id="checkOut">
-              SignUp
-            </Button>
-          </Link>
+          <Button class="btn btn-primary" id="signup" onClick={onSignUpClick}>
+            Sign Up
+          </Button>
           <Button
             class="btn btn-primary"
             id="checkOut"
