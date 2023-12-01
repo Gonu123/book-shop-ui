@@ -13,7 +13,7 @@ const Header = ({ isBookAvailable, cartList }) => {
   const onCheckOutClick = () => {
     navigate("/BuyBook", { state: { cartList } })
   }
-  useEffect( () => {
+  useEffect(() => {
     const url = new URL(window.location.href);
     console.log(url);
     const code = url.searchParams.get("code");
@@ -46,7 +46,7 @@ const Header = ({ isBookAvailable, cartList }) => {
         .then((response) => {
           return response.json();
         })
-        .then( (responseJson) => {
+        .then((responseJson) => {
           Validation(responseJson.access_token);
         });
     }
@@ -69,9 +69,9 @@ const Header = ({ isBookAvailable, cartList }) => {
       });
   };
 
-  // const onLoginClick = () => {
-  //   navigate("http://localhost:8090/default/authorize?client_id=debugger&scope=openid+role&response_type=code&response_mode=query&state=1234&nonce=5678&redirect_uri=http%3A%2F%2Flocalhost%3A3000");
-  // }
+  const onLoginClick = () => {
+    window.location.href = "http://localhost:8090/default/authorize?client_id=debugger&scope=openid+role&response_type=code&response_mode=query&state=1234&nonce=5678&redirect_uri=http%3A%2F%2Flocalhost%3A3000";
+  }
 
   const onSignUpClick = () => {
     navigate("/SignUP")
@@ -86,13 +86,11 @@ const Header = ({ isBookAvailable, cartList }) => {
             Book Shop
           </p>
           {loginVisible ? (
-            <Link to="http://localhost:8090/default/authorize?client_id=debugger&scope=openid+role&response_type=code&response_mode=query&state=1234&nonce=5678&redirect_uri=http%3A%2F%2Flocalhost%3A3000">
-              <Button class="btn btn-primary" id="login">
-                Login
-              </Button>
-            </Link>
+            <Button class="btn btn-primary" id="login" onClick={onLoginClick}>
+              Log in
+            </Button>
           ) : (
-            <h2>{userName}</h2>
+            <h2 id="userName">{userName}</h2>
           )}
           <Button class="btn btn-primary" id="signup" onClick={onSignUpClick}>
             Sign Up
