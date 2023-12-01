@@ -25,3 +25,8 @@
 #book{
     margin-left: 5%;
 }
+
+#noOrderText{
+    text-align: center;
+    margin: 5px;
+}
