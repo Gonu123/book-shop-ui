@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./ViewOrder.styles.css";
-import { useLocation } from "react-router-dom";
+//import { useLocation } from "react-router-dom";
 
 
 const ViewOrder = () => {
     const [orders, setOrders] = useState([]);
-    const location = useLocation();
-    const access_token = location.state?.accessToken;
-    console.log(access_token);
+    //const location = useLocation();
+    //const access_token = location.state?.accessToken;
+    //console.log(access_token);
 
     useEffect(() => {
 

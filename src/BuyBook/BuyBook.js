@@ -8,7 +8,7 @@ const BuyBook = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const cartList = location.state?.cartList;
-    const access_token = location.state?.accessToken;
+    //const access_token = location.state?.accessToken;
     console.log(location);
     let totalPrice = 0;
     let items = [];
