@@ -6,12 +6,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 const Header = ({ isBookAvailable, cartList }) => {
   const [userName, setUserName] = useState("");
+  const [accessToken, setAccessToken] = useState("");
   const [loginVisible, setLoginVisible] = useState(true);
 
   const navigate = useNavigate();
 
   const onCheckOutClick = () => {
-    navigate("/BuyBook", { state: { cartList } })
+    navigate("/BuyBook", { state: { cartList ,accessToken} })
   }
   useEffect(() => {
     const url = new URL(window.location.href);
@@ -47,7 +48,9 @@ const Header = ({ isBookAvailable, cartList }) => {
           return response.json();
         })
         .then((responseJson) => {
+          setAccessToken(responseJson.access_token);
           Validation(responseJson.access_token);
+
         });
     }
   }, []);

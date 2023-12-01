@@ -8,8 +8,9 @@ import { useNavigate } from "react-router-dom";
 const BuyBook = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const cartList = location.state?.cartList
-
+    const cartList = location.state?.cartList;
+    const access_token = location.state?.accessToken;
+    console.log(location);
     let totalPrice = 0;
     let items = [];
 
@@ -32,21 +33,29 @@ const BuyBook = () => {
             alert("Please add address to continue purchase")
         }
         else{
-            console.log("Clicked Buy Now")
             let request = {
-                "address":document.getElementById("address").value,
-                "items": items,
-                "modeOfPayment": "COD",
-                "price": totalPrice,
-            }
-            axios.post("http://localhost:8080/order",request).then((response) => {
-                alert(`Your Order is booked Successfully with order id ${response?.data?.orderId}`)
-                navigate("/")
-            }).catch((error)=>{
-                console.log(error)
-                alert(`We are getting the error.\n Please Try after sometime.`)
-                navigate("/")
-            })
+              address: document.getElementById("address").value,
+              items: items,
+              modeOfPayment: "COD",
+              price: totalPrice,
+            };
+            axios
+              .post("http://localhost:8080/order", request, {
+                  headers: {
+                      accessToken: access_token
+                  }
+              })
+              .then((response) => {
+                alert(
+                  `Your Order is booked Successfully with order id ${response?.data?.orderId}`
+                );
+                navigate("/");
+              })
+              .catch((error) => {
+                console.log(error);
+                alert(`We are getting the error.\n Please Try after sometime.`);
+                navigate("/");
+              });
         }
       }
 
