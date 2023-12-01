@@ -2,7 +2,6 @@ import "./Header.styles.css";
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 import axios from "axios";
 const Header = ({ isBookAvailable, cartList }) => {
   const [userName, setUserName] = useState("");
